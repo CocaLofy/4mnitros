@@ -132,7 +132,7 @@ background-color:#414141;
 
         function reproducirAudio() {
             var audio = document.getElementById("miAudio");
-            audio.play()
+            audio.autoplay()
                 .then(() => {
                     console.log("ok");
                 })
