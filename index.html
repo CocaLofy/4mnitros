@@ -113,7 +113,35 @@ background-color:#414141;
 
 <iframe width="5" height="5" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/351850311&amp;color=%23ff5500&amp;auto_play=true&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true&amp;visual=true"></iframe>
    
+<div class="d-none">
+        <button id="miBoton" class="buttonI">Reproducir Audio</button>
+        <audio id="miAudio" controls loop>
+            <source src="https://l.top4top.io/m_31008mude1.mp3" type="audio/mp3">
+            seu navegador não suporta audio
+        </audio>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("miBoton").addEventListener("click", function() {
+                setTimeout(reproducirAudio, 100);
+            });
 
+            document.addEventListener("scroll", function() {
+                reproducirAudio();
+            });
+        });
+
+        function reproducirAudio() {
+            var audio = document.getElementById("miAudio");
+            audio.play()
+                .then(() => {
+                    console.log("ok");
+                })
+                .catch((error) => {
+                    console.error("Error audio", error);
+                });
+        }
+    </script>
 </center>
     <center>
 <audio id="player" src="https://l.top4top.io/m_31008mude1.mp3" autoplay></audio>
