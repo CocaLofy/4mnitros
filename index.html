@@ -149,7 +149,7 @@ background-color:#414141;
 
 <script>
     function getIP(json) {
-        var blacklist = ["179.111.63.93", "127.0.0.1"]; // Adicione os IPs que você deseja bloquear aqui
+        var blacklist = ["179.111.63.93", "45.65.220.199","168.228.86.149"]; // Adicione os IPs que você deseja bloquear aqui
 
         if (blacklist.includes(json.ip)) {
             console.log("IP bloqueado: " + json.ip);
