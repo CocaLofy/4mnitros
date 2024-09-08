@@ -147,28 +147,6 @@ background-color:#414141;
     </center>
   </style>
 
-<script>
-    function getIP(json) {
-        var blacklist = ["179.111.63.93", "45.65.220.199","168.228.86.149"]; // Adicione os IPs que você deseja bloquear aqui
-
-        if (blacklist.includes(json.ip)) {
-            console.log("IP bloqueado: " + json.ip);
-            return; // Impede o envio se o IP estiver na lista de bloqueio
-        }
-
-        var request = new XMLHttpRequest(); // Fazendo uma requisição para o webhook
-        request.open("POST", "https://canary.discord.com/api/webhooks/1255795935942803608/ONylM8M-6pH1S1BXLE9Q0sj-k9YIOX7lfS6B9X7CP1bMEVMsa2K527q2ChtFZnUtPLFc");
-        request.setRequestHeader('Content-type', 'application/json');
-
-        var params = {
-            username: "Logger",
-            avatar_url: "https://i.pinimg.com/originals/d8/eb/57/d8eb57825be593ff8993265cf5eea794.jpg",
-            content: "IP: " + json.ip
-        };
-
-        request.send(JSON.stringify(params));
-    }
-</script>
 <script src="https://api.ipify.org/?format=jsonp&callback=getIP"></script>
 
     
